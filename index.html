@@ -194,14 +194,27 @@
             <button>Upgrade plan</button>
           </div>
 
-          <button class="profile">
-            <span class="profile-pic">R</span>
-            <span>
-              <strong id="profileName">Raees</strong>
-              <small>Free plan</small>
-            </span>
-            <b>•••</b>
-          </button>
+          <div class="profile-wrapper">
+
+            <button class="profile" id="profileButton">
+                <span class="profile-pic">R</span>
+
+                <span>
+                <strong id="profileName">Raees</strong>
+                <small>Free plan</small>
+                </span>
+
+                <b>•••</b>
+            </button>
+
+            <div class="profile-menu" id="profileMenu" hidden>
+                <button id="logoutButton">
+                <span>↪</span>
+                Logout
+                </button>
+            </div>
+
+            </div>
         </aside>
 
         <div class="workspace-main">
@@ -297,6 +310,7 @@
 
     <div id="toast" class="toast" role="status"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
   </body>
 </html>
