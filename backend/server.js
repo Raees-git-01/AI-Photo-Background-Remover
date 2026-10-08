@@ -33,7 +33,7 @@ const upload = multer({
   },
 });
 
-const pythonPath = "python3";
+const pythonPath = "python";
 
 const pythonScript = path.join(
   __dirname,
@@ -50,6 +50,8 @@ app.post(
   "/api/remove-background",
   upload.single("image"),
   async (req, res) => {
+    req.setTimeout(10 * 60 * 1000);
+    res.setTimeout(10 * 60 * 1000);
     try {
       if (!req.file) {
         return res.status(400).json({
@@ -96,6 +98,8 @@ app.post(
         ]
       );
 
+      console.log("Python process started:", pythonProcess.pid);
+
       let pythonOutput = "";
       let pythonError = "";
 
@@ -124,6 +128,13 @@ app.post(
       pythonProcess.on(
         "close",
         async (code) => {
+          console.log("Python process closed with code:", code);
+
+          console.log(
+            "Python process closed with code:",
+            code
+          );
+
           try {
             if (code !== 0) {
               console.error(
