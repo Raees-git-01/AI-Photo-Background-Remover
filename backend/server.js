@@ -166,7 +166,7 @@ app.post(
               message:
                 "Background removed successfully.",
               outputUrl:
-                `http://localhost:${PORT}/uploads/${outputFilename}`,
+                `${req.protocol}://${req.get("host")}/uploads/${outputFilename}`,
             });
           } catch (error) {
             console.error(error);
