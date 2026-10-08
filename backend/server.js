@@ -33,8 +33,7 @@ const upload = multer({
   },
 });
 
-const pythonPath =
-  "C:\\Users\\Raees\\AppData\\Local\\Programs\\Python\\Python311\\python.exe";
+const pythonPath = "python3";
 
 const pythonScript = path.join(
   __dirname,
