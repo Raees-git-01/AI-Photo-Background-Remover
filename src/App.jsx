@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { createClient } from "@supabase/supabase-js";
 import "./styles.css";
-import heroImage from "./assets/hero1.png";
+import heroImage from "./assets/hero1.webp";
 
 // ===============================
 // SUPABASE
@@ -455,6 +455,7 @@ async function removeBackground() {
     const formData = new FormData();
 
     formData.append("image", selectedFile);
+
 
     const response = await fetch(
       "https://erasely-backend.onrender.com/api/remove-background",
