@@ -457,7 +457,7 @@ async function removeBackground() {
     formData.append("image", selectedFile);
 
     const response = await fetch(
-      "http://localhost:5000/api/remove-background",
+      "https://erasely-backend.onrender.com/api/remove-background",
       {
         method: "POST",
         body: formData,
